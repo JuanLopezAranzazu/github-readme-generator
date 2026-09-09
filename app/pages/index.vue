@@ -84,29 +84,66 @@ function handleReset() {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2 font-semibold">
-              <UIcon name="i-lucide-user-circle" class="size-5" />
+              <UIcon
+                name="i-lucide-user-circle"
+                class="size-5"
+              />
               Información básica
             </div>
           </template>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <UFormField label="Usuario de GitHub" required>
-              <UInput v-model="state.githubUsername" placeholder="octocat" icon="i-simple-icons-github" class="w-full" />
+            <UFormField
+              label="Usuario de GitHub"
+              required
+            >
+              <UInput
+                v-model="state.githubUsername"
+                placeholder="octocat"
+                icon="i-simple-icons-github"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="Nombre">
-              <UInput v-model="state.name" placeholder="Tu nombre" class="w-full" />
+              <UInput
+                v-model="state.name"
+                placeholder="Tu nombre"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="Pronombres (opcional)">
-              <UInput v-model="state.pronouns" placeholder="ella/she, él/he..." class="w-full" />
+              <UInput
+                v-model="state.pronouns"
+                placeholder="ella/she, él/he..."
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="Título / rol">
-              <UInput v-model="state.title" placeholder="Desarrollador/a Full Stack" class="w-full" />
+              <UInput
+                v-model="state.title"
+                placeholder="Desarrollador/a Full Stack"
+                class="w-full"
+              />
             </UFormField>
-            <UFormField label="Ubicación" class="sm:col-span-2">
-              <UInput v-model="state.location" placeholder="Ciudad, País" class="w-full" />
+            <UFormField
+              label="Ubicación"
+              class="sm:col-span-2"
+            >
+              <UInput
+                v-model="state.location"
+                placeholder="Ciudad, País"
+                class="w-full"
+              />
             </UFormField>
-            <UFormField label="Bio corta" class="sm:col-span-2">
-              <UTextarea v-model="state.bio" :rows="2" class="w-full" />
+            <UFormField
+              label="Bio corta"
+              class="sm:col-span-2"
+            >
+              <UTextarea
+                v-model="state.bio"
+                :rows="2"
+                class="w-full"
+              />
             </UFormField>
           </div>
         </UCard>
@@ -114,28 +151,49 @@ function handleReset() {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2 font-semibold">
-              <UIcon name="i-lucide-sparkles" class="size-5" />
+              <UIcon
+                name="i-lucide-sparkles"
+                class="size-5"
+              />
               Sobre mí (detalles)
             </div>
           </template>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <UFormField label="🔭 Trabajando actualmente en">
-              <UInput v-model="state.currentWork" class="w-full" />
+              <UInput
+                v-model="state.currentWork"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="🌱 Aprendiendo">
-              <UInput v-model="state.currentLearning" class="w-full" />
+              <UInput
+                v-model="state.currentLearning"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="👯 Quiero colaborar en">
-              <UInput v-model="state.collaborateOn" class="w-full" />
+              <UInput
+                v-model="state.collaborateOn"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="🤝 Puedo ayudar con">
-              <UInput v-model="state.helpWith" class="w-full" />
+              <UInput
+                v-model="state.helpWith"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="💬 Pregúntame sobre">
-              <UInput v-model="state.askMeAbout" class="w-full" />
+              <UInput
+                v-model="state.askMeAbout"
+                class="w-full"
+              />
             </UFormField>
             <UFormField label="⚡ Dato curioso">
-              <UInput v-model="state.funFact" class="w-full" />
+              <UInput
+                v-model="state.funFact"
+                class="w-full"
+              />
             </UFormField>
           </div>
         </UCard>
@@ -143,16 +201,29 @@ function handleReset() {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2 font-semibold">
-              <UIcon name="i-lucide-wrench" class="size-5" />
+              <UIcon
+                name="i-lucide-wrench"
+                class="size-5"
+              />
               Tecnologías
-              <UBadge v-if="state.skills.length" color="primary" variant="subtle" size="sm">
+              <UBadge
+                v-if="state.skills.length"
+                color="primary"
+                variant="subtle"
+                size="sm"
+              >
                 {{ state.skills.length }}
               </UBadge>
             </div>
           </template>
           <div class="space-y-4">
-            <div v-for="group in SKILL_GROUPS" :key="group.label">
-              <p class="text-sm font-medium text-muted mb-2">{{ group.label }}</p>
+            <div
+              v-for="group in SKILL_GROUPS"
+              :key="group.label"
+            >
+              <p class="text-sm font-medium text-muted mb-2">
+                {{ group.label }}
+              </p>
               <div class="flex flex-wrap gap-2">
                 <UButton
                   v-for="skill in group.skills"
@@ -172,12 +243,19 @@ function handleReset() {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2 font-semibold">
-              <UIcon name="i-lucide-share-2" class="size-5" />
+              <UIcon
+                name="i-lucide-share-2"
+                class="size-5"
+              />
               Redes sociales
             </div>
           </template>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <UFormField v-for="social in SOCIAL_OPTIONS" :key="social.key" :label="social.label">
+            <UFormField
+              v-for="social in SOCIAL_OPTIONS"
+              :key="social.key"
+              :label="social.label"
+            >
               <UInput
                 v-model="state.socials[social.key]"
                 :icon="social.icon"
@@ -191,7 +269,10 @@ function handleReset() {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2 font-semibold">
-              <UIcon name="i-lucide-layout-list" class="size-5" />
+              <UIcon
+                name="i-lucide-layout-list"
+                class="size-5"
+              />
               Secciones a incluir
             </div>
           </template>
@@ -204,20 +285,41 @@ function handleReset() {
             />
           </div>
 
-          <div v-if="state.sections.support" class="mt-4">
+          <div
+            v-if="state.sections.support"
+            class="mt-4"
+          >
             <UFormField label="Enlace de apoyo (Buy Me a Coffee, Ko-fi, PayPal...)">
-              <UInput v-model="state.supportUrl" placeholder="https://buymeacoffee.com/tuusuario" class="w-full" />
+              <UInput
+                v-model="state.supportUrl"
+                placeholder="https://buymeacoffee.com/tuusuario"
+                class="w-full"
+              />
             </UFormField>
           </div>
 
-          <div v-if="state.sections.stats || state.sections.topLangs || state.sections.streak || state.sections.trophies" class="mt-4">
+          <div
+            v-if="state.sections.stats || state.sections.topLangs || state.sections.streak || state.sections.trophies"
+            class="mt-4"
+          >
             <UFormField label="Tema de las tarjetas de estadísticas">
-              <USelect v-model="state.statsTheme" :items="STAT_THEMES" value-key="value" label-key="label" class="w-full sm:w-64" />
+              <USelect
+                v-model="state.statsTheme"
+                :items="STAT_THEMES"
+                value-key="value"
+                label-key="label"
+                class="w-full sm:w-64"
+              />
             </UFormField>
           </div>
         </UCard>
 
-        <UButton color="neutral" variant="ghost" icon="i-lucide-rotate-ccw" @click="handleReset">
+        <UButton
+          color="neutral"
+          variant="ghost"
+          icon="i-lucide-rotate-ccw"
+          @click="handleReset"
+        >
           Reiniciar formulario
         </UButton>
       </div>
@@ -238,10 +340,21 @@ function handleReset() {
                 class="w-auto"
               />
               <div class="flex gap-2">
-                <UButton color="neutral" variant="subtle" icon="i-lucide-copy" size="sm" @click="copyMarkdown">
+                <UButton
+                  color="neutral"
+                  variant="subtle"
+                  icon="i-lucide-copy"
+                  size="sm"
+                  @click="copyMarkdown"
+                >
                   Copiar
                 </UButton>
-                <UButton color="primary" icon="i-lucide-download" size="sm" @click="downloadMarkdown">
+                <UButton
+                  color="primary"
+                  icon="i-lucide-download"
+                  size="sm"
+                  @click="downloadMarkdown"
+                >
                   Descargar
                 </UButton>
               </div>
@@ -249,8 +362,15 @@ function handleReset() {
           </template>
 
           <div class="max-h-[75vh] overflow-y-auto">
-            <div v-if="view === 'preview'" class="markdown-preview p-5" v-html="renderedHtml" />
-            <pre v-else class="p-5 text-xs sm:text-sm whitespace-pre-wrap break-words font-mono">{{ markdown }}</pre>
+            <div
+              v-if="view === 'preview'"
+              class="markdown-preview p-5"
+              v-html="renderedHtml"
+            />
+            <pre
+              v-else
+              class="p-5 text-xs sm:text-sm whitespace-pre-wrap break-words font-mono"
+            >{{ markdown }}</pre>
           </div>
         </UCard>
       </div>

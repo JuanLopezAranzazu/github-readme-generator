@@ -1,64 +1,67 @@
-# Nuxt Starter Template
+# Generador de README para GitHub
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Aplicación web responsive hecha con **Nuxt 4** y **Nuxt UI** para crear el
+`README.md` del perfil de GitHub (el repo especial `tu-usuario/tu-usuario`).
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## Características
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+- Formulario con nombre, bio, ubicación, "sobre mí", tecnologías, redes sociales, etc.
+- Selector de tecnologías por categorías (usa iconos de [skillicons.dev](https://skillicons.dev)).
+- Secciones activables: encabezado, sobre mí, tecnologías, redes sociales,
+  estadísticas de GitHub, lenguajes más usados, racha de contribuciones,
+  trofeos, contador de visitas y sección de apoyo/donaciones.
+- Selector de tema para las tarjetas de estadísticas (github-readme-stats).
+- **Vista previa en vivo** del Markdown renderizado.
+- Pestaña para ver el **código Markdown** crudo.
+- Botones para **Copiar** al portapapeles y **Descargar** como `README.md`.
+- Diseño responsive (formulario y preview se apilan en móvil, en dos
+  columnas con preview sticky en escritorio).
+- Modo claro/oscuro incluido (Nuxt UI).
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+## Requisitos
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+- Node.js 20 o superior
 
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
+## Instalación
 
 ```bash
 pnpm install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Desarrollo
 
 ```bash
 pnpm dev
 ```
 
-## Production
+Abre http://localhost:3000
 
-Build the application for production:
+## Build de producción
 
 ```bash
 pnpm build
-```
-
-Locally preview production build:
-
-```bash
 pnpm preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Estructura relevante
 
-## Renovate integration
+```
+app/
+  composables/
+    useReadmeConstants.ts   # listas de skills, redes sociales y temas
+    useReadmeGenerator.ts   # estado reactivo + generación del markdown
+  pages/
+    index.vue               # formulario + preview + copiar/descargar
+  app.vue                    # layout (header/footer)
+  app.config.ts               # color primario de Nuxt UI
+  assets/css/main.css         # estilos del preview del markdown
+```
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+## Personalizar
+
+- Agrega más tecnologías en `SKILL_GROUPS` (usa cualquier slug de
+  https://skillicons.dev).
+- Agrega más redes sociales en `SOCIAL_OPTIONS`.
+- Cambia el color principal en `app/app.config.ts`.
+- Ajusta el formato del README generado en la función `buildMarkdown` de
+  `useReadmeGenerator.ts`.

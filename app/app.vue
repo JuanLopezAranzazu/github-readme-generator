@@ -24,8 +24,14 @@ useSeoMeta({
   <UApp>
     <UHeader :toggle="false">
       <template #left>
-        <NuxtLink to="/" class="flex items-center gap-2 font-bold text-lg focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1">
-          <UIcon name="i-simple-icons-github" class="size-6" />
+        <NuxtLink
+          to="/"
+          class="flex items-center gap-2 font-bold text-lg focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
+        >
+          <UIcon
+            name="i-simple-icons-github"
+            class="size-6"
+          />
           README Generator
         </NuxtLink>
       </template>
@@ -33,7 +39,7 @@ useSeoMeta({
       <template #right>
         <UColorModeButton />
         <UButton
-          to="https://github.com"
+          to="https://github.com/JuanLopezAranzazu/github-readme-generator"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
